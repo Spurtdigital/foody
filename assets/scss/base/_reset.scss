@@ -1,0 +1,18 @@
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+html{
+    overflow-x: hidden;
+    body{
+        overflow-x: hidden;  
+    }
+    &.lock{
+        overflow-y: hidden;
+        body{
+            overflow-y: hidden;
+            overflow-x: hidden;  
+        }
+    }
+}

@@ -1,0 +1,30 @@
+.panel {
+    background-color: $secondary;
+    height: 100vh;
+    left: 0;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    position: fixed;
+    top: 0;
+    transform: translateX(100%);
+    transition: transform .5s ease;
+    width: 100vw;
+    z-index: 8000;
+    &__inner {
+        max-height: 100%;
+        overflow: auto;
+        padding: 200px 0 0 0;
+      
+    }
+}
+
+html {
+    &.lock {
+        .panel {
+            transform: translateX(0);
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+}

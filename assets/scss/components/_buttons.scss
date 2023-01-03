@@ -1,0 +1,129 @@
+//
+// Base styles
+//
+
+.btn {
+    @include transition($btn-transition);
+    background-color: transparent;
+    border: $btn-border-width solid transparent;
+    color: $body-color;
+    cursor: if($enable-button-pointers, pointer, null);
+    display: inline-block;
+    font-family: $btn-font-family;
+    font-weight: $font-weight-bold;
+    line-height: $btn-line-height;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    vertical-align: middle;
+    white-space: $btn-white-space;
+    height: 45px;
+    line-height: 45px;
+    border-radius: 45px;
+    padding: 0 15px 0 25px;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    &:after{
+        content:'\f178';
+        font-family: 'Font Awesome 5 Pro';
+        margin-left: 20px;
+        position: relative;
+        top: -1px;
+      }
+    &:hover {
+        color: $body-color;
+        text-decoration: if($link-hover-decoration == underline, none, null);
+    }
+  
+    .btn-check:focus + &,
+    &:focus {
+        box-shadow: $btn-focus-box-shadow;
+        outline: 0;
+    }
+  
+    .btn-check:checked + &,
+    .btn-check:active + &,
+    &:active,
+    &.active {
+        @include box-shadow($btn-active-box-shadow);
+  
+        &:focus {
+            @include box-shadow($btn-focus-box-shadow, $btn-active-box-shadow);
+        }
+    }
+  
+    &:disabled,
+    &.disabled,
+    fieldset:disabled & {
+        @include box-shadow(none);
+        opacity: $btn-disabled-opacity;
+        pointer-events: none;
+    }
+}
+  
+  
+//
+// Alternate buttons
+//
+
+@each $color, $value in $theme-colors {
+    .btn-#{$color} {
+        @include button-variant($value, $value);
+    }
+}
+  
+@each $color, $value in $theme-colors {
+    .btn-outline-#{$color} {
+        @include button-outline-variant($value);
+    }
+}
+  
+  
+//
+// Link buttons
+//
+
+// Make a button look and behave like a link
+.btn-link {
+    color: $btn-link-color;
+    font-weight: $font-weight-normal;
+    text-decoration: $link-decoration;
+  
+    &:hover {
+        color: $btn-link-hover-color;
+        text-decoration: $link-hover-decoration;
+    }
+  
+    &:focus {
+        text-decoration: $link-hover-decoration;
+    }
+  
+    &:disabled,
+    &.disabled {
+        color: $btn-link-disabled-color;
+    }
+  
+    // No need for an active state here
+}
+  
+  
+//
+// Button Sizes
+//
+  
+.btn-lg {
+    @include button-size($btn-padding-y-lg, $btn-padding-x-lg, $btn-font-size-lg, $btn-border-radius-lg);
+}
+  
+.btn-sm {
+    @include button-size($btn-padding-y-sm, $btn-padding-x-sm, $btn-font-size-sm, $btn-border-radius-sm);
+}
+
+  
+.btn-secondary{
+    color:white;
+    &:hover{
+        color:white;
+    }
+  }
