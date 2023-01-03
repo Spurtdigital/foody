@@ -1,0 +1,46 @@
+.header{
+    &-top{
+        background-color: $primary;
+        &__links{
+            @include reset-list();
+            li{
+                a{
+                    color: $white;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+    &__logo{
+        height: 85px;
+        max-height: 76px;
+        width: 120px;
+        background-image: url('../images/logo.png');
+        background-size: contain;
+        background-position: left center;
+        background-repeat: no-repeat;
+        content: '';
+        display: block;
+    }
+    &-main{
+        background-color: #FFF;
+        border-bottom: 1px solid #f1f1f1;
+        nav{
+            ul{
+                @include reset-list();
+                li{
+                    padding: 7px 14px;
+                    &:first-child{
+                        margin-left: -14px;
+                    }
+                    &:hover{
+                        background-color: $gray-100;
+                    }
+                    a{
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+    } 
+}

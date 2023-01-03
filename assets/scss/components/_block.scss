@@ -1,1 +1,32 @@
-.block{}
+.block{
+    &-recipe{
+        &__media{
+            height: 225px;
+            background-color: $gray-100;
+            position: relative;
+        }
+        &__category{
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 8500;
+            background-color: $white;
+            border-radius: 8px;
+            padding: 5px 15px;
+            @include font-size(12px);
+            border: 1px solid $gray-100;
+            display: block;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        &__content{
+            padding: 30px 20px;
+        }
+        &__title{
+            @include font-size(16px);
+            font-weight: bold;
+            color: $black;
+        }
+    }
+}
